@@ -8,7 +8,7 @@ Our method prunes the training dataset by excluding the easiest PSMA samples, ai
 
 Our models can be trained using the datacentric code provided by the authors [datacentric-challenge](https://github.com/ClinicalDataScience/datacentric-challenge) and this repository heavily relies on it. 
 
-To generate the trimed dataset configs, simply run the `compute_psma_pruned_split.py` script, which generates the trimmed splits. To faciliate things, we precomputed the splits from the 1st to the 5th percentile in the `config` folder. All models are trained using config `config/baseline_config.yml` which we obtained from the authors.
+To generate the trimed dataset configs, simply run the `compute_psma_pruned_split.py` script, which generates the trimmed splits. To faciliate things, we precomputed the splits from the 1st to the 5th percentile in the `config` folder. All models are trained using config `config/baseline_config.yml` which we obtained from the authors. Model weights can be downloaded from [GDrive](https://drive.google.com/drive/folders/1p0t3kEr5DuFgO7F-BZxaZySyxtX1yfD7?usp=sharing)
 
 In the following, you find the original `Readme.md` from the [datacentric-challenge](https://github.com/ClinicalDataScience/datacentric-challenge) repository to faciliate working with this codebase.
 
