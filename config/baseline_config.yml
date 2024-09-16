@@ -1,0 +1,35 @@
+data:
+  data_dir: /hkfs/work/workspace/scratch/yu2513-AnaIF/AutoPETIII/2024-05-10_Autopet_v1.1/
+  data_dir_preprocessed: /hkfs/work/workspace/scratch/yu2513-AnaIF/AutoPETIII/AutoPETIII_preprocessed
+  splits_file: /hkfs/work/workspace/scratch/yu2513-AnaIF/AutoPETIII/2024-05-10_Autopet_v1.1/cust_split_psma_4percent.json
+  #splits_file: /hkfs/work/workspace/scratch/yu2513-AnaIF/AutoPETIII/2024-05-10_Autopet_v1.1/splits_final.json
+  fold: all
+  target_shape: [128, 160, 112]
+  batch_size: 2
+  suffix: .npz
+  num_workers_train: 10
+  num_workers_val: 4
+
+logger:
+  experiment: baseline_config
+  name: remove_4th_psma
+  
+model:
+  pretrained: false
+  resume: false
+  sw_batch_size: 8
+  lr: 0.001
+  seed: 42
+
+trainer:
+  max_epochs: 774
+  precision: bf16-mixed 
+  accelerator: gpu
+  devices: 2
+  deterministic: true
+  strategy: auto
+  check_val_every_n_epoch: 1
+  sync_batchnorm: true
+  accumulate_grad_batches: 1
+  limit_val_batches: 0
+  num_sanity_val_steps: 0

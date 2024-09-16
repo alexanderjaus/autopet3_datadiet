@@ -1,4 +1,19 @@
-# Introduction
+# Data Diet: Can Trimming PET/CT Datasets Enhance Lesion Segmentation?
+
+Welcome to the autoPET III submission **Data Diet: Can Trimming PET/CT Datasets Enhance Lesion Segmentation?** 
+
+This project investigates the impact of reducing training data in PET/CT segmentation models, focusing on a data-centric approach for the autoPET3 challenge. The hypothesis is that selectively excluding certain training samples—rather than augmenting or altering the model architecture—can enhance lesion segmentation performance, particularly in PSMA-PET images.
+
+Our method prunes the training dataset by excluding the easiest PSMA samples, aiming to reduce overfitting and improve model calibration. We evaluate the performance across various exclusion rates and demonstrate that excluding a small percentage of the dataset can lead to performance improvements.
+
+Our models can be trained using the datacentric code provided by the authors [datacentric-challenge](https://github.com/ClinicalDataScience/datacentric-challenge) and this repository heavily relies on it. 
+
+To generate the trimed dataset configs, simply run the `compute_psma_pruned_split.py` script, which generates the trimmed splits. To faciliate things, we precomputed the splits from the 1st to the 5th percentile in the `config` folder. All models are trained using config `config/baseline_config.yml` which we obtained from the authors.
+
+In the following, you find the original `Readme.md` from the [datacentric-challenge](https://github.com/ClinicalDataScience/datacentric-challenge) repository to faciliate working with this codebase.
+
+------------------------------------------------
+# Introduction Datacentric Package
 
 Welcome to the Data-Centric Baseline Model repository for the autoPET III Challenge 2024! This repository provides all the necessary resources for participating in Award Category 2, which emphasizes leveraging data handling to enhance model performance. 
 
